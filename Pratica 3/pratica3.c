@@ -1,5 +1,7 @@
-/* Baixe, renomeie para .c e compile este arquivo, rode o servidor, e implemente um código cliente para conectar-se ao servidor e enviar todos os caracteres digitados no socket */
-/* O cliente não deve mostrar na tela os caracteres digitados, apenas os caracteres que receber do servidor. O cliente deve encerrar quando for digitado um '!' */
+/* rode o servidor, e implemente um código cliente para conectar-se ao servidor e 
+enviar todos os caracteres digitados no socket */
+/* O cliente não deve mostrar na tela os caracteres digitados, apenas os caracteres que 
+receber do servidor. O cliente deve encerrar quando for digitado um '!' */
 /* Servico de Eco */
 /* para compilar: gcc pratica3-eco.c -o pratica3-eco */
 #include <stdio.h>
@@ -34,6 +36,9 @@ int main(void) {
  return(0);
 }
 
-/* AULAS REMOTAS: envie o código do programa cliente criado para arthur@ufc.br com o assunto PRATICA 3. No corpo do e-mail indique o passo-a-passo de como o programa deve ser compilado.
-Caso você tenha feito o programa em Windows, anexe também o programa executável compilado e todas as bibliotecas necessárias a sua execução. Só corrigirei a prática cujos arquivos
-anexados estiverem abaixo de 1MB. É necessário que o usuário possa passar (no programa ou por linha de comando) o IP do servidor para conectar sem precisar recompilar. */
+/* AULAS REMOTAS: envie o código do programa cliente criado para arthur@ufc.br com o 
+assunto PRATICA 3. No corpo do e-mail indique o passo-a-passo de como o programa deve ser compilado.
+Caso você tenha feito o programa em Windows, anexe também o programa executável 
+compilado e todas as bibliotecas necessárias a sua execução. Só corrigirei a prática cujos arquivos
+anexados estiverem abaixo de 1MB. É necessário que o usuário possa passar 
+(no programa ou por linha de comando) o IP do servidor para conectar sem precisar recompilar. */

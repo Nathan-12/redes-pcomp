@@ -1,4 +1,4 @@
-/* Baixe, renomeie para .c e compile este arquivo, rode o servidor, 
+/* Compile este arquivo, rode o servidor, 
 e implemente um código cliente para conectar-se ao servidor uma vez, 
 imprimir a Data e Hora recebidas na tela e sair */
 /* Servico de Hora */
@@ -42,10 +42,6 @@ int main(void) {
  return(0);
 }
 
-/* AULAS REMOTAS: envie o código do programa cliente criado para arthur@ufc.br com o assunto PRATICA 2. 
-No corpo do e-mail indique o passo-a-passo de como o programa deve ser compilado.
-Caso você tenha feito o programa em Windows, anexe também o programa executável compilado e todas as 
-bibliotecas necessárias a sua execução. Só corrigirei a prática cujos arquivos
-anexados estiverem abaixo de 1MB. É necessário que o usuário possa passar 
+/*  É necessário que o usuário possa passar 
 (digitar no programa ou passar por linha de comando) o IP do servidor para conectar 
 sem precisar recompilar. */
