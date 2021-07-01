@@ -24,8 +24,8 @@ int main(int argc, char *argv[], char ip[]) {
     int len = sizeof(server);
     int slen;
 
-    char buffer_in[LEN];
-    char buffer_out[LEN];
+    char resposta[LEN];
+    char enviada[LEN];
 
     char enderecoIp[20];
 
@@ -52,37 +52,31 @@ int main(int argc, char *argv[], char ip[]) {
         return EXIT_FAILURE;
     }
 
-    // Recebe a resposta do servidor 
-    // if ((slen = recv(sockfd, buffer_in, LEN, 0)) > 0) {
-    //     buffer_in[slen + 1] = '\0';
-    //     fprintf(stdout, "Resposta do servidor: %s\n", buffer_in);
-    // }
-
+    printf("\n Digite '!' para encerrar conexao\n\n");
      while (true) {
 
-        /* Zeroing the buffers */
-        memset(buffer_in, 0x0, LEN);
-        memset(buffer_out, 0x0, LEN);
+        // Zerando os buffers
+        memset(resposta, 0x0, LEN);
+        memset(enviada, 0x0, LEN);
 
         fprintf(stdout, "Mande mensagem para o servidor: ");
-        fgets(buffer_out, LEN, stdin);
+        fgets(enviada, LEN, stdin);
+        // Manda mensagem para o servidor via socket
+        send(sockfd, enviada, strlen(enviada), 0);
 
-        /* Sends the read message to the server through the socket */
-        send(sockfd, buffer_out, strlen(buffer_out), 0);
-
-        /* Receives an answer from the server */
-        slen = recv(sockfd, buffer_in, LEN, 0);
-        printf("Resposta do servidor: %s\n", buffer_in);
-
-        /* 'bye' message finishes the connection */
-        if(strcmp(buffer_in, "bye") == 0)
+        // Recebe a resposta do servidor
+        slen = recv(sockfd, resposta, LEN, 0);
+        printf("Resposta do servidor: %s\n", resposta);
+            
+        // Mensagem do fim da conexão
+        if(strcmp(resposta, "!") == 0)
             break;
     }
 
     // Fecha a conexão
     close(sockfd);
 
-    fprintf(stdout, "\nConexão encerrada !\n\n");
+    fprintf(stdout, "Conexão encerrada !\n\n");
 
     return EXIT_SUCCESS;
 }
